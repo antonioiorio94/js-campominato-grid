@@ -10,12 +10,32 @@ Le validazioni e i controlli possiamo farli anche in un secondo momento.
 */
 
 
-//Creare una griglia 10x10
+//Creare una griglia
 const grid = document.getElementById("grid")
-const rows = 10;
-const columns = 10;
-const totalOfCells = rows * columns;
+let rows;
+let columns;
 
+
+//Bonus ---- Difficoltà
+
+const difficoltà = prompt ("Scegli il livello: facile - medio - difficile").toLowerCase();
+
+if(difficoltà === "facile"){
+  rows = 10;
+  columns = 10;
+    }else if(difficoltà === "medio"){
+    rows = 9;
+    columns = 9;
+      }else if(difficoltà === "difficile"){
+        rows = 7;
+        columns = 7;
+      };
+
+      console.log(rows);
+      console.log(columns);
+
+//crea griglia
+const totalOfCells = rows * columns;
 
 //Creare una cella e un ciclo per inserirle
 for (let i = 0; i < totalOfCells; i++){
