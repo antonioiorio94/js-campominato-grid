@@ -17,13 +17,31 @@ const columns = 10;
 const totalOfCells = rows * columns;
 
 
-//Creare un ciclo per inserire le celle
+//Creare una cella e un ciclo per inserirle
 for (let i = 0; i < totalOfCells; i++){
 
-  const cell = document.createElement('div');
+  const cell = createCell();
 
-  cell.classList.add('cell');
+  //inserisco i numeri
+  cell.innerText = (i +1);
+
+  //funzione per colorare la cella al click
+  cell.addEventListener('click', function(){
+    cell.classList.toggle('bg-blue');
+  })
+
 
   grid.appendChild(cell);
 
+}
+
+
+//Funzione per creare la cella
+function createCell(){
+
+  const item = document.createElement('div');
+
+  item.classList.add('cell');
+
+  return item;
 }
